@@ -1,4 +1,17 @@
- //1.01
+ // ==UserScript==
+// @name         ÊïÖÈöúÂÆö‰Ωç
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author      tianxiataiping
+// @match        http://dzgd.drpeng.com.cn:8079/portal/r/w
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Your code here...
  var oHead = document.getElementsByTagName('HEAD').item(0);
     var oScript= document.createElement("script");
     oScript.type = "text/javascript";
@@ -6,32 +19,32 @@
     oHead.appendChild( oScript);
 
    var nav= function(dfClick){
-       console.log("nav±ªµ˜”√");
+       console.log("navË¢´Ë∞ÉÁî®");
        setTimeout(function(){
            (dfClick&&typeof(dfClick)==="function")&&dfClick();
        },3000)
     };
     window.onload=function(){
         setTimeout(function(){
-            console.log("À¢–¬≥…π¶£¨∞Û∂®µ„ª˜ ¬º˛");
+            console.log("Âà∑Êñ∞ÊàêÂäüÔºåÁªëÂÆöÁÇπÂáª‰∫ã‰ª∂");
                         document.getElementsByClassName("metro-main-frame-refresh")[0].onclick=function(){
             nav(dataF); };
          document.getElementsByClassName("nav-area-img-panel")[0].onclick=function(){
             nav(dataF); };},3000);
     };
     var dataF=function (){
-        console.log("dataF±ªµ˜”√");
+        console.log("dataFË¢´Ë∞ÉÁî®");
         var dataFrame=document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementById("dataFrame").contentWindow.document;
         dataFrame.onclick=function(){
          setTimeout(function(){
              var formFrame=document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementById("dataFrame").contentWindow.document.getElementById("formFrame").contentWindow.document;
              var usershowid=formFrame.getElementById("CUSTOMERNO_Readonly");
              var tabf=formFrame.getElementById("aws-form-maintable");
-             formFrame.getElementById("PRETAGLabel").innerHTML="”√ªß…Á«¯";
+             formFrame.getElementById("PRETAGLabel").innerHTML="Áî®Êà∑Á§æÂå∫";
              formFrame.getElementById("PRETAG_Readonly").innerHTML=formFrame.getElementById("COMMUNITYNAME").value;
-             formFrame.getElementById("ONLINECHECKRESULTLabel").innerHTML="‘§‘º ±º‰";
+             formFrame.getElementById("ONLINECHECKRESULTLabel").innerHTML="È¢ÑÁ∫¶Êó∂Èó¥";
              formFrame.getElementById("ONLINECHECKRESULT_Readonly").style.color="red";
-             formFrame.getElementById("URGETIMESLabel").innerHTML="µ±«∞ ±º‰";
+             formFrame.getElementById("URGETIMESLabel").innerHTML="ÂΩìÂâçÊó∂Èó¥";
              var nowData=new Date();
              formFrame.getElementById("URGETIMES_Readonly").innerHTML=nowData.toLocaleDateString();
              if(formFrame.getElementById("APPOINTDATE_Readonly").innerHTML!=="&nbsp;"){
@@ -39,11 +52,11 @@
                  var yuyue=new Date(formFrame.getElementById("ONLINECHECKRESULT_Readonly").innerHTML);
                  // console.log(yuyue-nowData);
                  if((yuyue-nowData)<0){
-                     alert("ƒ„’‚π§µ•“—æ≠≥¨ ±£¨ªÚ’ﬂ¬Ì…œ≥¨ ±¡À");
+                     alert("‰Ω†ËøôÂ∑•ÂçïÂ∑≤ÁªèË∂ÖÊó∂ÔºåÊàñËÄÖÈ©¨‰∏äË∂ÖÊó∂‰∫Ü");
                  }
              }else{
-                 alert("æØ∏Ê\n’‚∏ˆ”√ªßªπ√ª‘§‘º£¨Œ“Ã·–—ƒ„¡À£¨≥¨ ±±π÷Œ“");
-                 formFrame.getElementById("ONLINECHECKRESULT_Readonly").innerHTML="µ±«∞”√ªß√ª”–‘§‘º";
+                 alert("Ë≠¶Âëä\nËøô‰∏™Áî®Êà∑ËøòÊ≤°È¢ÑÁ∫¶ÔºåÊàëÊèêÈÜí‰Ω†‰∫ÜÔºåË∂ÖÊó∂Âà´ÊÄ™Êàë");
+                 formFrame.getElementById("ONLINECHECKRESULT_Readonly").innerHTML="ÂΩìÂâçÁî®Êà∑Ê≤°ÊúâÈ¢ÑÁ∫¶";
              }
              tabf.getElementsByTagName("table")[0].style.display="none";
              tabf.getElementsByTagName("table")[1].getElementsByTagName("tr")[1].style.display="none";
@@ -65,3 +78,5 @@
         }//end dataFrame click
 
     };//setInterval(dataF,20000);
+
+})();
