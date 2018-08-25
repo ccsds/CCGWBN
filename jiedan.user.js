@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.2
 // @description  try to take over the world!
-// @author       天堂小助手
+// @author       tiantang
 // @match        http://dzgd.drpeng.com.cn:8079/portal/r/w
 // @grant        none
 // ==/UserScript==
@@ -13,7 +13,7 @@
 
     // Your code here...
 
-    console.log("脚本开始执行。。。");
+    console.log("脚本开始执行。。....。");
 
 
     setTimeout(function(){
