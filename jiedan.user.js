@@ -1,4 +1,19 @@
-    console.log("½Å±¾¿ªÊ¼Ö´ĞĞ¡£¡£¡£");
+// ==UserScript==
+// @name         é¹åšå£«å·¥å•ç³»ç»Ÿè‡ªåŠ¨æ¥å•
+// @namespace    http://tampermonkey.net/
+// @version      0.2
+// @description  try to take over the world!
+// @author       å¤©å ‚å°åŠ©æ‰‹
+// @match        http://dzgd.drpeng.com.cn:8079/portal/r/w
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Your code here...
+
+    console.log("è„šæœ¬å¼€å§‹æ‰§è¡Œã€‚ã€‚ã€‚");
 
 
     setTimeout(function(){
@@ -6,7 +21,7 @@
          var logIndent=document.createElement("textarea");
          logIndent.style.cssText="background:yellow;position:fixed;left:78px;top:300px;z-index:1;height:20px;cursor:pointer;height:400px;width:200px;text-align:center;"
         logIndent.id="logIndent";
-        logIndent.innerHTML="½Óµ¥ÈÕÖ¾\n";
+        logIndent.innerHTML="æ¥å•æ—¥å¿—\n";
          document.body.append(logIndent);
 
         document.getElementById("logIndent").onclick=function(){
@@ -14,55 +29,55 @@
             if(this.style.background=="yellow"){
                 this.style.background="red";
                   clearInterval(selectIn);
-                this.innerHTML="×Ô¶¯½Óµ¥ÒÑÍ£Ö¹\n"+document.getElementById("logIndent").innerHTML;
+                this.innerHTML="è‡ªåŠ¨æ¥å•å·²åœæ­¢\n"+document.getElementById("logIndent").innerHTML;
             }else{
                 this.style.background="yellow";
-                this.innerHTML="×Ô¶¯½Óµ¥ÒÑ¿ªÊ¼\n"+document.getElementById("logIndent").innerHTML;
+                this.innerHTML="è‡ªåŠ¨æ¥å•å·²å¼€å§‹\n"+document.getElementById("logIndent").innerHTML;
                 selectIn=setInterval(si ,200000);
             }
 
         }
 
-        logIndent.innerHTML="²åÈëÀ´µ¥ÒôÀÖ\n"+document.getElementById("logIndent").innerHTML;
+        logIndent.innerHTML="æ’å…¥æ¥å•éŸ³ä¹\n"+document.getElementById("logIndent").innerHTML;
          var aud=document.createElement("audio");
-         //È­»ÊkoÒôĞ§
+         //æ‹³çš‡koéŸ³æ•ˆ
          aud.src="https://mms-res.cdn.bcebos.com/fFhO6IAaZmBQBUhM9V0CBCs3hUTQ0QRMZIni9UhwBRlC0WgRZmniBpRenFvkrUgquWgquQXRfFSvrUCRBm8qZWkbZIg.mp3";
          aud.controls="aud.controls";
         document.body.append(aud);
 
         document.getElementsByClassName("nav-area-img-panel")[0].click();
 
-        document.getElementById("logIndent").innerHTML="²éÑ¯µ±Ç°¶©µ¥Êı\n"+document.getElementById("logIndent").innerHTML;
+        document.getElementById("logIndent").innerHTML="æŸ¥è¯¢å½“å‰è®¢å•æ•°\n"+document.getElementById("logIndent").innerHTML;
     },4000);
     function getIndent(len,nowTime){
 
- document.getElementById("logIndent").innerHTML+="´ò¿ª½Óµ¥ÁĞ±í\n";
+ document.getElementById("logIndent").innerHTML+="æ‰“å¼€æ¥å•åˆ—è¡¨\n";
         document.getElementsByClassName("metro-main-frame")[0].contentWindow.document.getElementById("conTaskButton").click();
-        var sq=/³¤´ºÉòÌúÊ¢»ªÍ¥|³¤´ºÔ¶¶«Ğ¡Çø|³¤´ºÎÂÖİ³Ç|³¤´ºÌ«Æ½ÑóĞ¬³Ç£¨ÉÌ£©|³¤´º¹óÑô¸ß²ã|³¤´º¹óÑôĞ¡Çø|³¤´ºĞÂ·¢ÉçÇøËÄÆÚ|³¤´ºĞÂ·¢ÉçÇøÈıÆÚ|³¤´º³¤°×Â·ÉçÇø|a/;
+        var sq=/é•¿æ˜¥æ²ˆé“ç››ååº­|é•¿æ˜¥è¿œä¸œå°åŒº|é•¿æ˜¥æ¸©å·åŸ|é•¿æ˜¥å¤ªå¹³æ´‹é‹åŸï¼ˆå•†ï¼‰|é•¿æ˜¥è´µé˜³é«˜å±‚|é•¿æ˜¥è´µé˜³å°åŒº|é•¿æ˜¥æ–°å‘ç¤¾åŒºå››æœŸ|é•¿æ˜¥æ–°å‘ç¤¾åŒºä¸‰æœŸ|é•¿æ˜¥é•¿ç™½è·¯ç¤¾åŒº|a/;
         var checked=false;
         setTimeout(function(){
             console.log("");
- document.getElementById("logIndent").innerHTML+="ÉçÇø²éÑ¯ÖĞ...\n";
+ document.getElementById("logIndent").innerHTML+="ç¤¾åŒºæŸ¥è¯¢ä¸­...\n";
             var sheq='';
             for(var i =0 ;i<len;i++){
                 sheq=document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row") [i].getElementsByClassName("pq-td-div")[3].innerHTML;
                 console.log();
-                 document.getElementById("logIndent").innerHTML=("ÉçÇøÊÇ:"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+                 document.getElementById("logIndent").innerHTML=("ç¤¾åŒºæ˜¯:"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
                  if(	sq.test(sheq)){
 
-                 document.getElementById("logIndent").innerHTML=("ÒÑÑ¡ÖĞÉçÇø£º"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+                 document.getElementById("logIndent").innerHTML=("å·²é€‰ä¸­ç¤¾åŒºï¼š"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
                 checked=true;
                 document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[0].getElementsByTagName ("input")[0].click();
             }else if(len>1 && sq.test(sheq)){
-               document.getElementById("logIndent").innerHTML=("ÒÑÑ¡ÖĞÉçÇø"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+               document.getElementById("logIndent").innerHTML=("å·²é€‰ä¸­ç¤¾åŒº"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
                 checked=true;
                 document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[1].getElementsByTagName ("input")[0].click();
             }else if(len>2 && sq.test(sheq)){
-               document.getElementById("logIndent").innerHTML=("ÒÑÑ¡ÖĞÉçÇø"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+               document.getElementById("logIndent").innerHTML=("å·²é€‰ä¸­ç¤¾åŒº"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
                 checked=true;
                 	document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[2].getElementsByTagName ("input")[0].click();
             }else if(len>3 && sq.test(sheq)){
-               document.getElementById("logIndent").innerHTML=("ÒÑÑ¡ÖĞÉçÇø"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+               document.getElementById("logIndent").innerHTML=("å·²é€‰ä¸­ç¤¾åŒº"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
                 checked=true;
                 document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[3].getElementsByTagName ("input")[0].click();
             }
@@ -71,19 +86,19 @@
         },3000);
         setTimeout(function(){
             if(checked){
-                console.log("µã»÷È·¶¨");
+                console.log("ç‚¹å‡»ç¡®å®š");
                 document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("dlg-button")[0].getElementsByClassName ("blue")[0].click();
                 console.log();
-                 document.getElementById("logIndent").innerHTML=("½Óµ¥³É¹¦£¬µ±Ç°Ê±¼ä£º"+nowTime.toLocaleTimeString()+"\n"+document.getElementById("logIndent").innerHTML);
+                 document.getElementById("logIndent").innerHTML=("æ¥å•æˆåŠŸï¼Œå½“å‰æ—¶é—´ï¼š"+nowTime.toLocaleTimeString()+"\n"+document.getElementById("logIndent").innerHTML);
                 document.getElementsByTagName("audio")[0].play();
 
             }else{
-                 document.getElementById("logIndent").innerHTML="µ±Ç°Ã»ÓĞÄúµÄ¶©µ¥...\n"+document.getElementById("logIndent").innerHTML;
+                 document.getElementById("logIndent").innerHTML="å½“å‰æ²¡æœ‰æ‚¨çš„è®¢å•...\n"+document.getElementById("logIndent").innerHTML;
             }
         },6000);
 
         setTimeout(function(){
-            console.log("¹Ø±Õ½Óµ¥ÁĞ±í");
+            console.log("å…³é—­æ¥å•åˆ—è¡¨");
             document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName ("dlg-close")[0].click();
 
         },8000);
@@ -94,12 +109,12 @@
 
         var len=document.getElementsByClassName("metro-main-frame")[0].contentWindow.document.getElementById("conTask").innerHTML*1;
         console.log();
-          document.getElementById("logIndent").innerHTML=("µ±Ç°¶©µ¥Êı£º"+len+"\n"+document.getElementById("logIndent").innerHTML);
+          document.getElementById("logIndent").innerHTML=("å½“å‰è®¢å•æ•°ï¼š"+len+"\n"+document.getElementById("logIndent").innerHTML);
         setTimeout(function(){
             document.getElementsByClassName("metro-main-frame-refresh")[0].click();
         },4000);
         if(len>0){
-            document.getElementById("logIndent").innerHTML="¿ªÊ¼½ÓÈ¡¶©µ¥\n"+document.getElementById("logIndent").innerHTML;
+            document.getElementById("logIndent").innerHTML="å¼€å§‹æ¥å–è®¢å•\n"+document.getElementById("logIndent").innerHTML;
             setTimeout(function(){
                 getIndent(len,nowTime);
 
@@ -107,7 +122,7 @@
 
         }else{
 
-            document.getElementById("logIndent").innerHTML=("µ±Ç°Ê±¼ä£º"+nowTime.toLocaleTimeString()+" Ã»ÓĞ¶©µ¥\n"+document.getElementById("logIndent").innerHTML);
+            document.getElementById("logIndent").innerHTML=("å½“å‰æ—¶é—´ï¼š"+nowTime.toLocaleTimeString()+" æ²¡æœ‰è®¢å•\n"+document.getElementById("logIndent").innerHTML);
         }
     }
 
@@ -116,5 +131,8 @@
 
 
 
-    console.log("½Å±¾ÕıÔÚÖ´ĞĞ¡£¡£¡£¶¨Ê±Æ÷ÒÑÆôÓÃ");
+    console.log("è„šæœ¬æ­£åœ¨æ‰§è¡Œã€‚ã€‚ã€‚å®šæ—¶å™¨å·²å¯ç”¨");
 
+
+
+})();
