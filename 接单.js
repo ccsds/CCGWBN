@@ -1,0 +1,120 @@
+    console.log("脚本开始执行。。。");
+
+
+    setTimeout(function(){
+
+         var logIndent=document.createElement("textarea");
+         logIndent.style.cssText="background:yellow;position:fixed;left:78px;top:300px;z-index:1;height:20px;cursor:pointer;height:400px;width:200px;text-align:center;"
+        logIndent.id="logIndent";
+        logIndent.innerHTML="接单日志\n";
+         document.body.append(logIndent);
+
+        document.getElementById("logIndent").onclick=function(){
+          
+            if(this.style.background=="yellow"){
+                this.style.background="red";
+                  clearInterval(selectIn);
+                this.innerHTML="自动接单已停止\n"+document.getElementById("logIndent").innerHTML;
+            }else{
+                this.style.background="yellow";
+                this.innerHTML="自动接单已开始\n"+document.getElementById("logIndent").innerHTML;
+                selectIn=setInterval(si ,200000);
+            }
+
+        }
+
+        logIndent.innerHTML="插入来单音乐\n"+document.getElementById("logIndent").innerHTML;
+         var aud=document.createElement("audio");
+         //拳皇ko音效
+         aud.src="https://mms-res.cdn.bcebos.com/fFhO6IAaZmBQBUhM9V0CBCs3hUTQ0QRMZIni9UhwBRlC0WgRZmniBpRenFvkrUgquWgquQXRfFSvrUCRBm8qZWkbZIg.mp3";
+         aud.controls="aud.controls";
+        document.body.append(aud);
+
+        document.getElementsByClassName("nav-area-img-panel")[0].click();
+
+        document.getElementById("logIndent").innerHTML="查询当前订单数\n"+document.getElementById("logIndent").innerHTML;
+    },4000);
+    function getIndent(len,nowTime){
+
+ document.getElementById("logIndent").innerHTML+="打开接单列表\n";
+        document.getElementsByClassName("metro-main-frame")[0].contentWindow.document.getElementById("conTaskButton").click();
+        var sq=/长春沈铁盛华庭|长春远东小区|长春温州城|长春太平洋鞋城（商）|长春贵阳高层|长春贵阳小区|长春新发社区四期|长春新发社区三期|长春长白路社区|a/;
+        var checked=false;
+        setTimeout(function(){
+            console.log("");
+ document.getElementById("logIndent").innerHTML+="社区查询中...\n";
+            var sheq='';
+            for(var i =0 ;i<len;i++){
+                sheq=document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row") [i].getElementsByClassName("pq-td-div")[3].innerHTML;
+                console.log();
+                 document.getElementById("logIndent").innerHTML=("社区是:"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+                 if(	sq.test(sheq)){
+
+                 document.getElementById("logIndent").innerHTML=("已选中社区："+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+                checked=true;
+                document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[0].getElementsByTagName ("input")[0].click();
+            }else if(len>1 && sq.test(sheq)){
+               document.getElementById("logIndent").innerHTML=("已选中社区"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+                checked=true;
+                document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[1].getElementsByTagName ("input")[0].click();
+            }else if(len>2 && sq.test(sheq)){
+               document.getElementById("logIndent").innerHTML=("已选中社区"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+                checked=true;
+                	document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[2].getElementsByTagName ("input")[0].click();
+            }else if(len>3 && sq.test(sheq)){
+               document.getElementById("logIndent").innerHTML=("已选中社区"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
+                checked=true;
+                document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[3].getElementsByTagName ("input")[0].click();
+            }
+            }
+           
+        },3000);
+        setTimeout(function(){
+            if(checked){
+                console.log("点击确定");
+                document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("dlg-button")[0].getElementsByClassName ("blue")[0].click();
+                console.log();
+                 document.getElementById("logIndent").innerHTML=("接单成功，当前时间："+nowTime.toLocaleTimeString()+"\n"+document.getElementById("logIndent").innerHTML);
+                document.getElementsByTagName("audio")[0].play();
+
+            }else{
+                 document.getElementById("logIndent").innerHTML="当前没有您的订单...\n"+document.getElementById("logIndent").innerHTML;
+            }
+        },6000);
+
+        setTimeout(function(){
+            console.log("关闭接单列表");
+            document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName ("dlg-close")[0].click();
+
+        },8000);
+    }
+
+ function si(){
+      var nowTime=new Date();
+
+        var len=document.getElementsByClassName("metro-main-frame")[0].contentWindow.document.getElementById("conTask").innerHTML*1;
+        console.log();
+          document.getElementById("logIndent").innerHTML=("当前订单数："+len+"\n"+document.getElementById("logIndent").innerHTML);
+        setTimeout(function(){
+            document.getElementsByClassName("metro-main-frame-refresh")[0].click();
+        },4000);
+        if(len>0){
+            document.getElementById("logIndent").innerHTML="开始接取订单\n"+document.getElementById("logIndent").innerHTML;
+            setTimeout(function(){
+                getIndent(len,nowTime);
+
+            },8000);
+
+        }else{
+
+            document.getElementById("logIndent").innerHTML=("当前时间："+nowTime.toLocaleTimeString()+" 没有订单\n"+document.getElementById("logIndent").innerHTML);
+        }
+    }
+
+     var selectIn=setInterval(si ,200000);
+
+
+
+
+    console.log("脚本正在执行。。。定时器已启用");
+
