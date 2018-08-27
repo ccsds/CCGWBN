@@ -42,7 +42,7 @@
      //   logIndent.innerHTML="插入来单音乐\n"+document.getElementById("logIndent").innerHTML;
         
          //拳皇ko音效
-        // aud.src="https://mms-res.cdn.bcebos.com/fFhO6IAaZmBQBUhM9V0CBCs3hUTQ0QRMZIni9UhwBRlC0WgRZmniBpRenFvkrUgquWgquQXRfFSvrUCRBm8qZWkbZIg.mp3";
+         aud.src="https://mms-res.cdn.bcebos.com/fFhO6IAaZmBQBUhM9V0CBCs3hUTQ0QRMZIni9UhwBRlC0WgRZmniBpRenFvkrUgquWgquQXRfFSvrUCRBm8qZWkbZIg.mp3";
          aud.controls="aud.controls";
         aud.volume = 0.5;
         document.body.append(aud);
@@ -109,9 +109,10 @@ case 1:
         },3000);
         setTimeout(function(){
             if(checked){
-                console.log("点击确定");
+              
+                countIndent++;
                 document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("dlg-button")[0].getElementsByClassName ("blue")[0].click();
-                console.log();
+              
                  document.getElementById("logIndent").innerHTML=("接单成功，当前时间："+nowTime.toLocaleTimeString()+"\n"+document.getElementById("logIndent").innerHTML);
                 document.getElementsByTagName("audio")[0].play();
 
