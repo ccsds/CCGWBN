@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         鹏博士工单系统自动接单
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
-// @author       tiantang
+// @author       天堂小助手
 // @match        http://dzgd.drpeng.com.cn:8079/portal/r/w
 // @grant        none
 // ==/UserScript==
@@ -13,9 +13,10 @@
 
     // Your code here...
 
-    console.log("脚本开始执行。。....。");
+    console.log("脚本开始执行。。。");
 
-
+    var countIndent=0;
+     var aud=document.createElement("audio");
     setTimeout(function(){
 
          var logIndent=document.createElement("textarea");
@@ -38,11 +39,12 @@
 
         }
 
-        logIndent.innerHTML="插入来单音乐\n"+document.getElementById("logIndent").innerHTML;
-         var aud=document.createElement("audio");
+     //   logIndent.innerHTML="插入来单音乐\n"+document.getElementById("logIndent").innerHTML;
+        
          //拳皇ko音效
-         aud.src="https://mms-res.cdn.bcebos.com/fFhO6IAaZmBQBUhM9V0CBCs3hUTQ0QRMZIni9UhwBRlC0WgRZmniBpRenFvkrUgquWgquQXRfFSvrUCRBm8qZWkbZIg.mp3";
+        // aud.src="https://mms-res.cdn.bcebos.com/fFhO6IAaZmBQBUhM9V0CBCs3hUTQ0QRMZIni9UhwBRlC0WgRZmniBpRenFvkrUgquWgquQXRfFSvrUCRBm8qZWkbZIg.mp3";
          aud.controls="aud.controls";
+        aud.volume = 0.5;
         document.body.append(aud);
 
         document.getElementsByClassName("nav-area-img-panel")[0].click();
@@ -55,6 +57,27 @@
         document.getElementsByClassName("metro-main-frame")[0].contentWindow.document.getElementById("conTaskButton").click();
         var sq=/长春沈铁盛华庭|长春远东小区|长春温州城|长春太平洋鞋城（商）|长春贵阳高层|长春贵阳小区|长春新发社区四期|长春新发社区三期|长春长白路社区|a/;
         var checked=false;
+switch(countIndent){
+case 0:
+        aud.src="http://lol.52pk.com/lingsheng/mp3.shtml?url=http://lol.52pk.com/pifu/sounds/qita/16.mp3";
+        break;
+case 1:
+        aud.src="http://lol.52pk.com/lingsheng/mp3.shtml?url=http://lol.52pk.com/pifu/sounds/qita/1.mp3";
+        break;
+ case 2:
+        aud.src="http://lol.52pk.com/lingsheng/mp3.shtml?url=http://lol.52pk.com/pifu/sounds/qita/2.mp3";
+        break;
+ case 3:
+         aud.src="http://lol.52pk.com/lingsheng/mp3.shtml?url=http://lol.52pk.com/pifu/sounds/qita/3.mp3";
+        break;
+ case 4:
+         aud.src="http://lol.52pk.com/lingsheng/mp3.shtml?url=http://lol.52pk.com/pifu/sounds/qita/4.mp3";
+        break;
+    default:
+ aud.src="http://lol.52pk.com/lingsheng/mp3.shtml?url=http://lol.52pk.com/pifu/sounds/qita/10.mp3";
+        break;
+}
+        aud.src="http://lol.52pk.com/lingsheng/mp3.shtml?url=http://lol.52pk.com/pifu/sounds/qita/16.mp3";
         setTimeout(function(){
             console.log("");
  document.getElementById("logIndent").innerHTML+="社区查询中...\n";
