@@ -14,6 +14,7 @@
     // Your code here...
 
     console.log("脚本开始执行。。。");
+     //document.getElementsByClassName("metro-main-frame") [0].src="http://dzgd.drpeng.com.cn:8079/portal/r/w?sid=8d49bec2-f2af-4c86-80ed-7d616f0ebb49&cmd=com.actionsoft.apps.workbench_main_page";
 
     var countIndent=0;
      var aud=document.createElement("audio");
@@ -109,12 +110,12 @@ case 1:
         },3000);
         setTimeout(function(){
             if(checked){
-              
+                console.log("点击确定");
                 countIndent++;
                 document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("dlg-button")[0].getElementsByClassName ("blue")[0].click();
-              
+                console.log();
                  document.getElementById("logIndent").innerHTML=("接单成功，当前时间："+nowTime.toLocaleTimeString()+"\n"+document.getElementById("logIndent").innerHTML);
-              //  document.getElementsByTagName("audio")[0].play();
+                document.getElementsByTagName("audio")[0].play();
 
             }else{
                  document.getElementById("logIndent").innerHTML="当前没有您的订单...\n"+document.getElementById("logIndent").innerHTML;
