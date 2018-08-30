@@ -110,12 +110,11 @@ case 1:
         },3000);
         setTimeout(function(){
             if(checked){
-                console.log("点击确定");
                 countIndent++;
                 document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("dlg-button")[0].getElementsByClassName ("blue")[0].click();
-                console.log();
+            
                  document.getElementById("logIndent").innerHTML=("接单成功，当前时间："+nowTime.toLocaleTimeString()+"\n"+document.getElementById("logIndent").innerHTML);
-                document.getElementsByTagName("audio")[0].play();
+               // document.getElementsByTagName("audio")[0].play();
 
             }else{
                  document.getElementById("logIndent").innerHTML="当前没有您的订单...\n"+document.getElementById("logIndent").innerHTML;
