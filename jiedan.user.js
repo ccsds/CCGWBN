@@ -78,7 +78,6 @@ case 1:
  aud.src="http://lol.52pk.com/lingsheng/mp3.shtml?url=http://lol.52pk.com/pifu/sounds/qita/10.mp3";
         break;
 }
-        aud.src="http://lol.52pk.com/lingsheng/mp3.shtml?url=http://lol.52pk.com/pifu/sounds/qita/16.mp3";
         setTimeout(function(){
             console.log("");
  document.getElementById("logIndent").innerHTML+="社区查询中...\n";
