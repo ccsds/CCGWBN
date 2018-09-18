@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         鹏博士工单系统自动接单
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.31
 // @description  try to take over the world!
 // @author       天堂小助手
 // @match        http://dzgd.drpeng.com.cn:8079/portal/r/w
@@ -12,7 +12,7 @@
     'use strict';
 
     // Your code here...
-
+try{
     console.log("脚本开始执行。。。");
      //document.getElementsByClassName("metro-main-frame") [0].src="http://dzgd.drpeng.com.cn:8079/portal/r/w?sid=8d49bec2-f2af-4c86-80ed-7d616f0ebb49&cmd=com.actionsoft.apps.workbench_main_page";
 
@@ -55,10 +55,11 @@
 
     },4000);
     function getIndent(len,nowTime){
-
- document.getElementById("logIndent").innerHTML+="打开接单列表\n";
-        document.getElementsByClassName("metro-main-frame")[0].contentWindow.document.getElementById("conTaskButton").click();
         var sq=/长春沈铁盛华庭|长春远东小区|长春温州城|长春太平洋鞋城（商）|长春贵阳高层|长春贵阳小区|长春新发社区四期|长春新发社区三期|长春长白路社区|a/;
+        document.getElementById("logIndent").innerHTML+=("欢迎你："+ document.getElementById("userInfoName").innerHTML+"\n");
+        document.getElementById("logIndent").innerHTML+="接单社区为"+sq+"\n";
+        document.getElementsByClassName("metro-main-frame")[0].contentWindow.document.getElementById("conTaskButton").click();
+      
         var checked=false;
 switch(countIndent){
 case 0:
@@ -130,6 +131,8 @@ case 1:
     }
 
  function si(){
+     try{
+
       var nowTime=new Date();
 
         var len=document.getElementsByClassName("metro-main-frame")[0].contentWindow.document.getElementById("conTask").innerHTML*1;
@@ -149,15 +152,18 @@ case 1:
 
             document.getElementById("logIndent").innerHTML=("当前时间："+nowTime.toLocaleTimeString()+" 没有订单\n"+document.getElementById("logIndent").innerHTML);
         }
-    }
+     }catch(e){
+     }
+ }
 
      var selectIn=setInterval(si ,200000);
 
 
-
-
     console.log("脚本正在执行。。。定时器已启用");
-
+}catch(e){
+    location.reload();
+    window.open("https://www.baidu.com/s?ie=UTF-8&wd="+e.message);
+}
 
 
 })();
