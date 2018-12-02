@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         鹏博士工单系统自动接单
 // @namespace    http://tampermonkey.net/
-// @version      0.3.1
+// @version      0.3.2
 // @description  try to take over the world!
 // @author       天堂小助手
 // @match        http://dzgd.drpeng.com.cn:8079/portal/r/w
@@ -107,7 +107,7 @@ case 1:
                 document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[3].getElementsByTagName ("input")[0].click();
             }
             }
-           
+           document.getElementsByTagName("audio")[0].src="http://culat.uicp.hk/voice/tts?text="+"接了"+sheq+"的工单"+"&isattachment=false";  
         },3000);
         setTimeout(function(){
             if(checked){
@@ -158,8 +158,9 @@ case 1:
 
      var selectIn=setInterval(si ,200000);
 
-
-    console.log("脚本正在执行。。。定时器已启用");
+document.getElementsByTagName("audio")[0].src="http://culat.uicp.hk/voice/tts?text="+"脚本开始执行"+"&isattachment=false"; 
+    document.getElementsByTagName("audio")[0].play();
+   console.log("脚本正在执行。。。定时器已启用");
 }catch(e){
     location.reload();
     window.open("https://www.baidu.com/s?ie=UTF-8&wd="+e.message);
