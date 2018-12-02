@@ -48,18 +48,14 @@ try{
          aud.controls="aud.controls";
         aud.volume = 0.5;
         document.body.append(aud);
-
         document.getElementsByClassName("nav-area-img-panel")[0].click();
         setTimeout(si,20000);
         document.getElementById("logIndent").innerHTML+=("欢迎你："+ document.getElementById("userInfoName").innerHTML+"\n");
         document.getElementById("logIndent").innerHTML+="接单社区为"+sq+"\n";
         document.getElementById("logIndent").innerHTML="查询当前订单数\n"+document.getElementById("logIndent").innerHTML;
-
     },4000);
     function getIndent(len,nowTime){
-      
         document.getElementsByClassName("metro-main-frame")[0].contentWindow.document.getElementById("conTaskButton").click();
-      
         var checked=false;
 switch(countIndent){
 case 0:
