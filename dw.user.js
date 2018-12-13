@@ -1,4 +1,17 @@
- //1.01
+ // ==UserScript==
+// @name         故障定位
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author      tianxiataiping
+// @match        http://dzgd.drpeng.com.cn:8079/portal/r/w
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Your code here...
  var oHead = document.getElementsByTagName('HEAD').item(0);
     var oScript= document.createElement("script");
     oScript.type = "text/javascript";
@@ -60,8 +73,11 @@
                  var href= "http://211.103.254.208:8081/ShowNetLinkPic.aspx?userid="+ this.innerHTML+ "&providerid=1000000006&key="+key;
                     window.open(href);
              }
-         },3000)//end setTime
+         },4000)
+            //end setTime
 
         }//end dataFrame click
 
     };//setInterval(dataF,20000);
+
+})();
