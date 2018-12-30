@@ -50,6 +50,7 @@ try{
         document.body.append(aud);
         document.getElementsByClassName("nav-area-img-panel")[0].click();
         setTimeout(si,20000);
+        document.getElementsByClassName("metro-main-frame-title")[0].innerHTML=("欢迎你："+ document.getElementById("userInfoName").innerHTML);
         document.getElementById("logIndent").innerHTML+=("欢迎你："+ document.getElementById("userInfoName").innerHTML+"\n");
         document.getElementById("logIndent").innerHTML+="接单社区为"+sq+"\n";
         document.getElementById("logIndent").innerHTML="查询当前订单数\n"+document.getElementById("logIndent").innerHTML;
