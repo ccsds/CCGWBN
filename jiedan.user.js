@@ -15,7 +15,7 @@
 try{
     console.log("脚本开始执行。。。");
      //document.getElementsByClassName("metro-main-frame") [0].src="http://dzgd.drpeng.com.cn:8079/portal/r/w?sid=8d49bec2-f2af-4c86-80ed-7d616f0ebb49&cmd=com.actionsoft.apps.workbench_main_page";
-    var sq=/长春沈铁盛华庭|长春远东小区|长春温州城|长春太平洋鞋城（商）|长春贵阳高层|长春贵阳小区|长春新发社区四期|长春新发社区三期|长春长白路社区|长春北京大街散楼/;
+    var sq=/长春沈铁盛华庭|长春远东小区|长春温州城|长春太平洋鞋城（商）|长春五金市场散楼|长春双龙大厦|长春天津路高层|长春胜利大街小区|长春东三条社区|长春黄河路散楼|长春天津路小学家属楼|长春贵阳高层|长春贵阳小区|长春新发社区四期|长春新发社区三期|长春长白路社区|长春北京大街散楼/;
     var countIndent=0;
     //音乐audio对象
     var aud=document.createElement("audio");
