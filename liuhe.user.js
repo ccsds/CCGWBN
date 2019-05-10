@@ -139,7 +139,7 @@
         function si(){
             try{
                 
-                if(document.getElementById("userInfoName").innerHTML!="刘鹤"){
+                if(document.getElementById("userInfoName").innerHTML!="刘鹤（文）"||document.getElementById("userInfoName").innerHTML!="刘鹤(文)"){
                     document.getElementById("logIndent").style.background="red";
                     document.getElementById("logIndent").innerHTML="用户名不正确自动接单已停止\n"+document.getElementById("logIndent").innerHTML;
                     clearInterval(selectIn);
