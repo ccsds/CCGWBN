@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         鹏博士工单系统自动接单
 // @namespace    http://tampermonkey.net/
-// @version      0.3.3.1
+// @version      0.3.3.2
 // @description  try to take over the world!
 // @author       天堂小助手
 // @match        http://dzgd.drpeng.com.cn:8079/portal/r/w
