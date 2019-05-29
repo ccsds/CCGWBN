@@ -74,14 +74,6 @@
                         document.getElementById("logIndent").innerHTML=("已选中社区"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
                         checked=true;
                         document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[1].getElementsByTagName ("input")[0].click();
-                    }else if(!checked&&len>2 ){
-                        document.getElementById("logIndent").innerHTML=("已选中社区"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
-                        checked=true;
-                        document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[2].getElementsByTagName ("input")[0].click();
-                    }else if(!checked&&len>3){
-                        document.getElementById("logIndent").innerHTML=("已选中社区"+sheq+"\n"+document.getElementById("logIndent").innerHTML);
-                        checked=true;
-                        document.getElementsByClassName("metro-main-frame") [0].contentWindow.document.getElementsByClassName("aws-grid-row")[3].getElementsByTagName ("input")[0].click();
                     }
                 }
                 document.getElementsByTagName("audio")[0].src="https://mms-res.cdn.bcebos.com/fFhO6IAaZmBQBUhM9V0CBCs3hUTQ0QRMZIni9UhwBRlC0WgRZmniBpRenFvkrUgquWgquQXRfFSvrUCRBm8qZWkbZIg.mp3";
@@ -139,12 +131,7 @@
         function si(){
             try{
                 
-                if(document.getElementById("userInfoName").innerHTML!="刘鹤（文）"||document.getElementById("userInfoName").innerHTML!="刘鹤(文)"){
-                    document.getElementById("logIndent").style.background="red";
-                    document.getElementById("logIndent").innerHTML="用户名不正确自动接单已停止\n"+document.getElementById("logIndent").innerHTML;
-                    clearInterval(selectIn);
-
-                }
+               
 
                 var nowTime=new Date();
 
